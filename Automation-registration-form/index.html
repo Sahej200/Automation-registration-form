@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Intelligent Registration System</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1 class="title">Registration Form</h1>
+
+    <!-- Alert at top -->
+    <div id="formAlert" class="alert hidden" role="alert"></div>
+
+    <form id="registrationForm" novalidate>
+      <div class="grid">
+
+        <!-- First Name -->
+        <div class="form-group">
+          <label for="firstName">First Name <span class="required">*</span></label>
+          <input id="firstName" name="firstName" type="text" />
+          <small class="error" id="err-firstName"></small>
+        </div>
+
+        <!-- Last Name -->
+        <div class="form-group">
+          <label for="lastName">Last Name <span class="required">*</span></label>
+          <input id="lastName" name="lastName" type="text" />
+          <small class="error" id="err-lastName"></small>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group full">
+          <label for="email">Email <span class="required">*</span></label>
+          <input id="email" name="email" type="email" />
+          <small class="error" id="err-email"></small>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input id="phone" name="phone" type="tel" placeholder="+91..." />
+          <small class="error" id="err-phone"></small>
+        </div>
+
+        <!-- Age -->
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input id="age" name="age" type="number" />
+          <small class="error" id="err-age"></small>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group full">
+          <label>Gender <span class="required">*</span></label>
+          <div id="genderGroup" class="checkbox-row">
+            <label><input type="checkbox" name="gender" value="Male" /> Male</label>
+            <label><input type="checkbox" name="gender" value="Female" /> Female</label>
+            <label><input type="checkbox" name="gender" value="Other" /> Other</label>
+          </div>
+          <small class="error" id="err-gender"></small>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group full">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="3"></textarea>
+          <small class="error" id="err-address"></small>
+        </div>
+
+        <!-- Country / State / City -->
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="">-- Loading Countries --</option>
+          </select>
+          <span id="countryLoader" style="font-size:12px; display:none;">Loading…</span>
+          <small class="error" id="err-country"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State</label>
+          <select id="state" name="state" disabled>
+            <option value="">-- Select State --</option>
+          </select>
+          <small class="error" id="err-state"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City</label>
+          <select id="city" name="city" disabled>
+            <option value="">-- Select City --</option>
+          </select>
+          <small class="error" id="err-city"></small>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" />
+          <small class="error" id="err-password"></small>
+
+          <div id="pwdStrength" class="pwd-meter">
+            <div id="pwdBar" class="pwd-bar"></div>
+            <small id="pwdText" class="pwd-text">Strength: -</small>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" />
+          <small class="error" id="err-confirmPassword"></small>
+        </div>
+
+        <!-- Terms -->
+        <div class="form-group full">
+          <label>
+            <input id="terms" name="terms" type="checkbox" />
+            I agree to the Terms & Conditions <span class="required">*</span>
+          </label>
+          <small class="error" id="err-terms"></small>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-group full actions">
+          <!-- Always enabled now -->
+          <button id="submitBtn" type="submit">Register</button>
+          <button id="resetBtn" type="button" class="muted">Reset</button>
+        </div>
+      </div>
+    </form>
+
+    <footer class="footer">
+      <small>Built for the Frugal Testing Software Engineer task</small>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# --- Python cache files ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual environment ---
+venv/
+ENV/
+env/
+
+# --- IDE / Editor folders ---
+.vscode/
+.idea/
+
+# --- OS generated files ---
+.DS_Store
+Thumbs.db
+
+# --- Selenium screenshots/output ---
+registration_automation/screenshots/
+
+# --- Logs ---
+*.log
+
+# --- Python packaging ---
+build/
+dist/
+*.egg-info/
+
+# --- ChromeDriver downloaded by webdriver-manager ---
+~/.wdm/

@@ -1,0 +1,233 @@
+/* ------- Global Reset ------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ------- Page Layout ------- */
+body {
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5); /* Gradient page background */
+  padding: 40px 10px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  background: linear-gradient(145deg, #ffffff, #f0f4ff); /* Gradient card */
+  padding: 35px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4A90E2, #357ABD); /* Gradient text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ------- Form Grid Layout ------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.full {
+  grid-column: span 2;
+}
+
+/* ------- Form Fields ------- */
+.form-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  background: linear-gradient(180deg, #ffffff, #f7f9ff); /* subtle gradient */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #4A90E2;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(74,144,226,0.3);
+}
+
+/* ------- Inline Errors ------- */
+.error {
+  font-size: 13px;
+  color: #d9534f;
+  margin-top: 4px;
+  display: block;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: #d9534f !important;
+  background: #fff5f5;
+}
+
+/* ------- Required Text ------- */
+.required {
+  color: red;
+}
+
+/* ------- Checkbox Styling ------- */
+.checkbox-row {
+  display: flex;
+  gap: 18px;
+}
+
+.checkbox-inline {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* ------- Alerts ------- */
+.alert {
+  padding: 14px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.alert.error {
+  background: linear-gradient(90deg, #ffe3e3, #ffc1c1);
+  color: #d9534f;
+  border-left: 5px solid #d9534f;
+}
+
+.alert.success {
+  background: linear-gradient(90deg, #e6ffe9, #b3ffcc);
+  color: #2e8b57;
+  border-left: 5px solid #2e8b57;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ------- Password Strength Meter ------- */
+.pwd-meter {
+  margin-top: 8px;
+}
+
+.pwd-bar {
+  height: 6px;
+  width: 100%;
+  background: #ddd;
+  border-radius: 6px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.pwd-text {
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+  color: #666;
+}
+
+/* Color States */
+.pwd-weak {
+  background: linear-gradient(90deg, #f44336, #ff7961);
+  width: 33%;
+}
+
+.pwd-medium {
+  background: linear-gradient(90deg, #f0ad4e, #ffcc80);
+  width: 66%;
+}
+
+.pwd-strong {
+  background: linear-gradient(90deg, #5cb85c, #8ae68a);
+  width: 100%;
+}
+
+/* ------- Buttons ------- */
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+#submitBtn {
+  background: linear-gradient(90deg, #4A90E2, #357ABD);
+  color: white;
+}
+
+#submitBtn:hover {
+  background: linear-gradient(90deg, #357ABD, #2461A4);
+}
+
+#submitBtn:disabled {
+  background: linear-gradient(90deg, #a0c4eb, #89b0e0);
+  cursor: not-allowed;
+}
+
+#resetBtn {
+  background: linear-gradient(90deg, #e0e0e0, #cfcfcf);
+  color: #333;
+}
+
+#resetBtn:hover {
+  background: linear-gradient(90deg, #dcdcdc, #bfbfbf);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------- Footer ------- */
+.footer {
+  margin-top: 35px;
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+}
+
+/* ------- Mobile Responsive ------- */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .full {
+    grid-column: span 1;
+  }
+}
